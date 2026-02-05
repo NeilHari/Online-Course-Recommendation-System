@@ -91,6 +91,14 @@ vector<Course> recommendCourses(const vector<Course> &catalog, int interestArea,
 {
     string level = kSkillLevels[skillLevel - 1];
     vector<Course> matches;
+	void viewAllCourses(const vector<Course> &catalog)
+{
+    for (const auto &c : catalog)
+    {
+        cout << c.name << " (" << c.level << ")\n";
+    }
+}
+
 
     for (const auto &c : catalog)
     {
