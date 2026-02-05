@@ -31,6 +31,31 @@ int main()
 	int choice;
 printMainMenu();
 cin >> choice;
+while (true)
+{
+    printMainMenu();
+    int menuChoice = getIntInRange("Enter choice: ", 1, 2);
+
+    if (menuChoice == 1)
+    {
+        printInterestMenu();
+        int interest = getIntInRange("Choose interest: ", 1, 3);
+
+        printSkillMenu();
+        int skill = getIntInRange("Choose skill: ", 1, 3);
+
+        vector<Course> recs = recommendCourses(catalog, interest, skill);
+
+        for (int i = 0; i < recs.size(); i++)
+            cout << i + 1 << ". " << recs[i].name << "\n";
+
+        int pick = getIntInRange("Select course: ", 1, recs.size());
+        printCourseCard(recs[pick - 1]);
+    }
+    else
+        break;
+}
+
 
 
     return 0;
