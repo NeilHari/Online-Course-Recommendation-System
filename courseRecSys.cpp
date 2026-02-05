@@ -86,3 +86,16 @@ void printSkillMenu()
     cout << "\nSelect Skill Level:\n";
     cout << "1. Beginner\n2. Intermediate\n3. Advanced\n";
 }
+
+vector<Course> recommendCourses(const vector<Course> &catalog, int interestArea, int skillLevel)
+{
+    string level = kSkillLevels[skillLevel - 1];
+    vector<Course> matches;
+
+    for (const auto &c : catalog)
+    {
+        if (c.interestArea == interestArea && c.level == level)
+            matches.push_back(c);
+    }
+    return matches;
+}
