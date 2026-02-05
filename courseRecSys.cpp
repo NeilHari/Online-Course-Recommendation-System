@@ -73,3 +73,16 @@ int getIntInRange(const string &prompt, int lo, int hi)
         clearInput();
     }
 }
+
+void printInterestMenu()
+{
+    cout << "\nSelect Interest Area:\n";
+    for (int i = 0; i < kInterestAreas.size(); i++)
+        cout << i + 1 << ". " << kInterestAreas[i] << "\n";
+}
+
+void printSkillMenu()
+{
+    cout << "\nSelect Skill Level:\n";
+    cout << "1. Beginner\n2. Intermediate\n3. Advanced\n";
+}
