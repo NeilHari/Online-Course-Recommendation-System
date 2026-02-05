@@ -1,7 +1,11 @@
 #include <iostream>
 #include <vector>
 #include <string>
+#include <limits>
 using namespace std;
+
+
+
 
 struct Course
 {
@@ -45,4 +49,27 @@ void printMainMenu()
 {
     cout << "\n1. Get Course Recommendation\n";
     cout << "2. Exit\n";
+}
+
+
+void clearInput()
+{
+    cin.clear();
+    cin.ignore(numeric_limits<streamsize>::max(), '\n');
+}
+
+int getIntInRange(const string &prompt, int lo, int hi)
+{
+    while (true)
+    {
+        cout << prompt;
+        int x;
+        if (cin >> x && x >= lo && x <= hi)
+        {
+            clearInput();
+            return x;
+        }
+        cout << "Invalid input. Try again.\n";
+        clearInput();
+    }
 }
