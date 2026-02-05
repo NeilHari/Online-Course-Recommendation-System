@@ -108,3 +108,12 @@ vector<Course> recommendCourses(const vector<Course> &catalog, int interestArea,
     }
     return matches;
 }
+
+
+void printCourseCard(const Course &c)
+{
+    cout << "\nCourse Name: " << c.name
+         << "\nDuration: " << c.duration
+         << "\nSkill Level: " << c.level
+         << "\nPlatform: " << c.platform << "\n";
+}
