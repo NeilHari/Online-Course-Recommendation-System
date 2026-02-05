@@ -94,8 +94,17 @@ vector<Course> recommendCourses(const vector<Course> &catalog, int interestArea,
 
     for (const auto &c : catalog)
     {
-        if (c.interestArea == interestArea && c.level == level)
+        if (matches.size() < 3)
+{
+    for (const auto &c : catalog)
+    {
+        if (c.interestArea == interestArea && c.level != level)
             matches.push_back(c);
+        if (matches.size() == 3)
+            break;
+    }
+}
+
     }
     return matches;
 }
